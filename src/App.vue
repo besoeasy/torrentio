@@ -2,28 +2,29 @@
   <div
     class="min-h-screen flex flex-col items-center justify-center bg-gray-100"
   >
-    <input
-      v-model="imdbLink"
-      type="text"
-      placeholder="Enter IMDb link"
-      class="border border-gray-300 rounded-lg p-2 mb-4 w-1/3"
-    />
-    <button
-      @click="fetchTorrents"
-      class="bg-blue-500 text-white rounded-lg p-2"
-    >
-      Fetch Torrents
-    </button>
+    <div class="my-20">
+      <div class="bg-white shadow-md rounded-full flex items-center">
+        <input
+          v-model="imdbLink"
+          placeholder="Paste IMDB URL"
+          class="py-2 px-4 rounded-l-full w-full outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        <button
+          @click="fetchTorrents"
+          class="bg-blue-500 text-white rounded-full px-4 py-2 hover:bg-blue-600 transition duration-200"
+        >
+          Search
+        </button>
+      </div>
+    </div>
 
     <div v-if="torrents.length" class="mt-6 w-1/3">
-      <h2 class="text-xl font-semibold mb-2">Available Torrents</h2>
       <ul>
         <li
           v-for="torrent in torrents"
           :key="torrent.magnet"
-          class="bg-white shadow-md rounded-lg p-4 mb-2"
+          class="bg-white shadow-md rounded-lg p-4 mb-2 w-full"
         >
-          <h3 class="font-semibold">{{ torrent.name }}</h3>
           <p class="text-sm text-gray-600">{{ torrent.title }}</p>
 
           <div class="flex justify-between mt-2">
