@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const scraper = "https://torrentio.strem.fun";
+const scraper = "https://torrentio.strem.fun/sort=seeders";
 
 function getImdbId(url) {
   const match = url.match(/(tt\d{7,8})/);
